@@ -10,16 +10,8 @@ const NarBar = () => {
 
   useEffect(() => {
     const body = document.body;
-
-    if (darkMode) {
-      body.removeAttribute("data-bs-theme");
-      body.setAttribute("data-bs-theme", "dark");
-      localStorage.setItem("dark-mode", JSON.stringify(true));
-    } else {
-      body.removeAttribute("data-bs-theme");
-      body.setAttribute("data-bs-theme", "light");
-      localStorage.setItem("dark-mode", JSON.stringify(false));
-    }
+    body.setAttribute("data-bs-theme", darkMode ? "dark" : "light");
+    localStorage.setItem("dark-mode", JSON.stringify(darkMode));
   }, [darkMode]);
 
   const toggleMode = () => setDarkMode((prev) => !prev);
@@ -29,20 +21,24 @@ const NarBar = () => {
       expand="lg"
       className="shadow-sm py-3 bg-elements custom-text-color"
       sticky="top"
+      role="banner"
     >
       <Container className="d-flex justify-content-between align-items-center">
-        <Navbar.Brand as={Link} to="/" className="fw-bold fs-5">
-          Where in the world?
-        </Navbar.Brand>
+        <h1 className="fs-4 fw-bold mb-0">
+          <Navbar.Brand as={Link} to="/" className="custom-text-color text-decoration-none">
+            Where in the world?
+          </Navbar.Brand>
+        </h1>
 
-        <div
+        <button
+          type="button"
           onClick={toggleMode}
-          className="d-flex align-items-center gap-2"
-          style={{ cursor: "pointer" }}
+          className="btn btn-link text-decoration-none d-flex align-items-center gap-2 custom-text-color"
+          aria-label={`Activate ${darkMode ? "light" : "dark"} mode`}
         >
           {darkMode ? <BsMoonFill /> : <BsMoon />}
           <span>{darkMode ? "Light Mode" : "Dark Mode"}</span>
-        </div>
+        </button>
       </Container>
     </Navbar>
   );

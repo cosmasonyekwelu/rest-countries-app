@@ -24,7 +24,7 @@ Users should be able to:
 ### Links
 
 - **GitHub Repository:** [https://github.com/CosmasOnyekwelu/rest-countries-app](https://github.com/CosmasOnyekwelu/rest-countries-app)
-- **Live Site URL:** [https://rest-countries-cosmas.vercel.app](https://rest-countries-cosmas.vercel.app)
+- **Live Site URL:** [https://rest-countries-cosmas.vercel.app](https://rest-countries-app-delta.vercel.app/)
 
 ---
 
@@ -59,7 +59,7 @@ Through this challenge, I improved my understanding of:
 - Email: [cosmasonyekwelu@gmail.com](mailto:onyecosmas@gmail.com)
 - Website: [Cosmas's Portfolio](https://cosmasonyekwelu.github.io/)
 - Frontend Mentor: [@CosmasOnyekwelu](https://www.frontendmentor.io/profile/cosmasonyekwelu)
-- Twitter: [@cosmasdev](https://twitter.com/cosmasnyekwelu)
+- X(Twitter): [@cosmasonyekwelu](https://x.com/cosmasnyekwelu)
 
 ---
 

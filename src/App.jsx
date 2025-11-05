@@ -58,22 +58,31 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NarBar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <HomePage
-              allCountries={filteredCountries}
-              filterBySearch={filterBySearch}
-              filterByRegion={filterByRegion}
-              loading={loading}
-              isFiltering={isFiltering}
-            />
-          }
-        />
-        <Route path="/:countryName" element={<CountryDetail />} />
-      </Routes>
+      <header>
+        <NarBar />
+      </header>
+      <main id="main-content" role="main" tabIndex="-1">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <HomePage
+                allCountries={filteredCountries}
+                filterBySearch={filterBySearch}
+                filterByRegion={filterByRegion}
+                loading={loading}
+                isFiltering={isFiltering}
+              />
+            }
+          />
+          <Route path="/:countryName" element={<CountryDetail />} />
+        </Routes>
+      </main>
+      <footer className="text-center py-4 mt-5 small custom-text-color bg-elements">
+        <p className="mb-0">
+          © {new Date().getFullYear()} Cosmas Onyekwelu. All rights reserved.
+        </p>
+      </footer>
     </BrowserRouter>
   );
 }
