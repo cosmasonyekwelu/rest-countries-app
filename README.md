@@ -56,7 +56,7 @@ Through this challenge, I improved my understanding of:
 
 **Cosmas Onyekwelu**
 
-- Email: [cosmasonyekwelu@gmail.com](mailto:onyecosmas@gmail.com)
+- Email: [onyecosmas@gmail.com](mailto:onyecosmas@gmail.com)
 - Website: [Cosmas's Portfolio](https://cosmasonyekwelu.github.io/)
 - Frontend Mentor: [@CosmasOnyekwelu](https://www.frontendmentor.io/profile/cosmasonyekwelu)
 - X(Twitter): [@cosmasonyekwelu](https://x.com/cosmasnyekwelu)
