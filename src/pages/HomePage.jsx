@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { Container, Row, Col, Spinner, Pagination } from "react-bootstrap";
+import { Container, Spinner, Pagination } from "react-bootstrap";
 import Country from "../components/Country";
 import Search from "../components/Search";
 import Dropdown from "../components/Dropdown";
 
 const HomePage = ({ allCountries, filterBySearch, filterByRegion, loading }) => {
   const [currentPage, setCurrentPage] = useState(1);
-  const countriesPerPage = 24;
+  const countriesPerPage = 20;
 
   if (loading)
     return (
@@ -28,38 +28,34 @@ const HomePage = ({ allCountries, filterBySearch, filterByRegion, loading }) => 
 
   return (
     <Container fluid className="mt-4">
-      <Row className="mb-4 px-4 px-md-5">
-        <Col xs={12} md={6} className="mb-3 mb-md-0">
+      {/* Keep the filter row */}
+      <div className="d-flex flex-column flex-md-row justify-content-between align-items-start align-items-md-center mb-4 px-4 px-md-5 gap-3">
+        <div className="w-100" style={{ maxWidth: "480px" }}>
           <Search filterBySearch={filterBySearch} />
-        </Col>
-        <Col xs={12} md={3} className="ms-md-auto">
+        </div>
+        <div className="w-100" style={{ maxWidth: "200px" }}>
           <Dropdown filterByRegion={filterByRegion} />
-        </Col>
-      </Row>
+        </div>
+      </div>
 
-      <Row className="px-4 px-md-5">
+      {/* Replace Row/Col with your custom grid */}
+      <div className="all-countries px-4 px-md-5">
         {Array.isArray(currentCountries) && currentCountries.length > 0 ? (
           currentCountries.map((country, index) => (
-            <Col
+            <Country
               key={country.cca3 || country.name?.common || index}
-              xs={12}
-              sm={6}
-              md={4}
-              lg={3}
-              className="mb-4 d-flex"
-            >
-              <Country allCountries={[country]} />
-            </Col>
+              allCountries={[country]}
+            />
           ))
         ) : (
-          <Col xs={12} className="text-center mt-5">
+          <div className="text-center mt-5 w-100">
             <h5 className="fw-semibold custom-text-color">No countries found</h5>
             <p className="text-muted">
               Try a different search term or clear your filters.
             </p>
-          </Col>
+          </div>
         )}
-      </Row>
+      </div>
 
       {totalPages > 1 && (
         <div className="d-flex justify-content-center mt-4">
